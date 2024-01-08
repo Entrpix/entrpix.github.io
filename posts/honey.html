@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollen, but Windows</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="blog-title">Honey (Pollen, but Windows)</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        If you have seen 
+            <a href="https://github.com/mercuryworkshop/pollen">Pollen</a>
+            you know that it's a tool for testing and overwriting 
+            <a href="https://chromeenterprise.google/policies/">Google Enterprise Policies.</a>
+        </p>
+        However, this tool is only for ChromeOS devices.
+        </p>
+        If you don't know how Pollen works, I'll give you a quick rundown. 
+        </p>
+        In ChromeOS it stores User Enrollment Policies locally, similar to how you would set them in Linux.
+        </p>
+        Howver you can only set user policies, not device policies. Devices policies are any policies starting with "Device"
+    </p>
+        In Linux you can set ChromeOS policies by editing a JSON file stored at 
+            <code>/etc/opt/chrome/policies/managed/managed_policies.json</code>
+        </p>
+        Pollen works in the exact same way, policies are fetched from the Cloud and then written to this file.
+        </p>
+        This means if your ChromeOS device has Devmode enabled, you can edit these policies.
+        </p>
+        However, this only works on ChromeOS and Linux. What about Windows?
+        </p>
+        That's where the Windows Registry comes in. If you have Chrome installed policies are stored at
+            <code>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\</code>
+        </p>
+        Referring to the Policies list (provided above), you can edit the Registry to change the policies!
+        </p>
+        For example if you create the key <code>ExtensionInstallBlocklist</code> (under the policies path in the Registry)
+        and create a <code>string</code> named <code>1</code> and set the value to be <code>bmnlcjabgnpnenekpadlanbbkooimhnj</code>
+        It will block the Chrome Extension, 
+        <a href="https://chromewebstore.google.com/detail/honey-automatic-coupons-r/bmnlcjabgnpnenekpadlanbbkooimhnj">Honey</a>.
+        </p>
+        To see this in effect, open Chrome and go to <code>chrome://policy</code> and click "Reload Policies" you will notice a policy called "ExtensionInstallBlocklist" was created with the value ["bmnlcjabgnpnenekpadlanbbkooimhnj"]
+        </p>
+        And sure enough if you go to Honey's extension page it says "Your admin has blocked this item" should be "And sure enough, if you go to Honey's extension page, it says "Your admin has blocked this item".
+        </p>
+        Currently, I am developing a CLI tool similar to Pollen, but I wanted to go ahead and write about this :P
+    </main>
+</body>
+</html>
