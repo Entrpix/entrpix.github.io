@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nora | AUR on all Distros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="blog-title">Nora, AUR on all Distros</h1>
+        </div>
+    </header>
+
+    <main class="container">
+       If you somehow don't know, the AUR is a repository of packages for Arch Linux maintained by the community instead of a dedicated team.
+    </p>
+    It's one of the main reason people love Arch so much, if you need a package, the AUR has it.
+    </p>
+    Theres one problem though, the AUR is only available on Arch and other Arch-Based distros, Nora aims to fix that.
+    </p>
+    Nora is a CLI tool that uses <a href="https://github.com/89luca89/distrobox/">Distrobox</a> to install packages from the AUR on any distro.
+    </p>
+    Distrobox is another CLI tool using Docker that allows you to test any distro on well, any distro.
+    </p>
+    Nora uses an Arch Distrobox instance that acts as a easy-to-interact-with VM for the AUR.
+    </p>
+    Nora uses <a href="https://github.com/Jguer/yay">Yay</a> as the AUR helper.
+    </p>
+    Why can't we just install Yay on our distro? Good question, while you can install Pacman, Arch's package manager and makepkg on a distro other then Arch, its well, painful.
+    </p>
+    Once you setup a basic Arch container with Yay in Distrobox you can run <code>nora init</code> to setup Nora.
+    </p>
+    From their you can use Nora to install AUR packages on any distro.
+    </p>
+    Their are still some issues with this though, for example, once you install a package you will probably want to appear in your distro's application menu. You will need to run <code>nora export</code>
+    </p>
+    I actually have no clue if this works as I'm using WSL and I don't have a GUI, but it should work.
+    </p>
+    If that doesn't work Nora also has <code>nora open</code> which can open packages if they dont show up, still annoying though.
+    </p>
+    I hope you find Nora to be useful, thank you for reading this :D
+    </main>
+</body>
+</html>
