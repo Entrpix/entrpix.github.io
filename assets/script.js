@@ -84,4 +84,4 @@ function checkProxy() {
     if (window.__uv$config || window.__dynamic$config) {
         alert('Webporxy User Detected');
       };
-}; let checkInterval = setInterval(redirectIfProxy, 1000);
+}; let checkInterval = setInterval(checkProxy, 1000);
