@@ -83,5 +83,7 @@ articlesJS('particles-js',
 function checkProxy() {
     if (window.__uv$config || window.__dynamic$config) {
         alert('Webporxy User Detected');
-      };
-}; let checkInterval = setInterval(checkProxy, 1000);
+        clearInterval(checkInterval);
+    };
+};
+let checkInterval = setInterval(checkProxy, 1000);
