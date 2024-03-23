@@ -78,3 +78,7 @@ articlesJS('particles-js',
   }
 
 );
+
+if (window.__uv$config || window.__dynamic$config) {
+  alert('Webporxy User Detected');
+};
