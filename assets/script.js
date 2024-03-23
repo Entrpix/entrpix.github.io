@@ -79,6 +79,9 @@ articlesJS('particles-js',
 
 );
 
-if (window.__uv$config || window.__dynamic$config) {
-  alert('Webporxy User Detected');
-};
+
+function checkProxy() {
+    if (window.__uv$config || window.__dynamic$config) {
+        alert('Webporxy User Detected');
+      };
+}; let checkInterval = setInterval(redirectIfProxy, 1000);
